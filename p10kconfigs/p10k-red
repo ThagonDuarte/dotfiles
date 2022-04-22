@@ -47,7 +47,7 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-	  # user
+	  #user
     context                 # user@hostname
     direnv                  # direnv status (https://direnv.net/)
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
@@ -354,10 +354,10 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=5
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=5
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=41
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=124
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=41
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=124
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
@@ -520,23 +520,23 @@
   # it will signify error by turning red.
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=5
-  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=1
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=124
+  typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=0
 
   # Status when the last command was terminated by a signal.
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL=true
   # Use terse signal names: "INT" instead of "SIGINT(2)".
   typeset -g POWERLEVEL9K_STATUS_VERBOSE_SIGNAME=false
   typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=5
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=1
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=124
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_BACKGROUND=0
 
   # Status when some part of a pipe command fails and the overall exit status is also non-zero.
   # It may look like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=5
-  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=1
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=124
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_BACKGROUND=0
 
   ###################[ command_execution_time: duration of the last command ]###################
   # Execution time color.
@@ -717,7 +717,7 @@
 
   # Haskell version from asdf.
   typeset -g POWERLEVEL9K_ASDF_HASKELL_FOREGROUND=0
-  typeset -g POWERLEVEL9K_ASDF_HASKELL_BACKGROUND=3
+  typeset -g POWERLEVEL9K_ASDF_HASKELL_BACKGROUND=5
   # typeset -g POWERLEVEL9K_ASDF_HASKELL_VISUAL_IDENTIFIER_EXPANSION='⭐'
   # typeset -g POWERLEVEL9K_ASDF_HASKELL_SHOW_ON_UPGLOB='*.foo|*.bar'
 
@@ -739,7 +739,7 @@
 
   #################[ ranger: ranger shell (https://github.com/ranger/ranger) ]##################
   # Ranger shell color.
-  typeset -g POWERLEVEL9K_RANGER_FOREGROUND=3
+  typeset -g POWERLEVEL9K_RANGER_FOREGROUND=5
   typeset -g POWERLEVEL9K_RANGER_BACKGROUND=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_RANGER_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -767,7 +767,7 @@
 
   ######[ midnight_commander: midnight commander shell (https://midnight-commander.org/) ]######
   # Midnight Commander shell color.
-  typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_FOREGROUND=3
+  typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_FOREGROUND=5
   typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_BACKGROUND=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_MIDNIGHT_COMMANDER_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -810,7 +810,7 @@
   typeset -g POWERLEVEL9K_VI_MODE_VISUAL_BACKGROUND=4
   # Text and color for overtype (a.k.a. overwrite and replace) vi mode.
   typeset -g POWERLEVEL9K_VI_OVERWRITE_MODE_STRING=OVERTYPE
-  typeset -g POWERLEVEL9K_VI_MODE_OVERWRITE_BACKGROUND=3
+  typeset -g POWERLEVEL9K_VI_MODE_OVERWRITE_BACKGROUND=5
   # Text and color for insert vi mode.
   typeset -g POWERLEVEL9K_VI_INSERT_MODE_STRING=
   typeset -g POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=8
@@ -1246,7 +1246,7 @@
   ##########[ haskell_stack: haskell version from stack (https://haskellstack.org/) ]###########
   # Haskell color.
   typeset -g POWERLEVEL9K_HASKELL_STACK_FOREGROUND=0
-  typeset -g POWERLEVEL9K_HASKELL_STACK_BACKGROUND=3
+  typeset -g POWERLEVEL9K_HASKELL_STACK_BACKGROUND=5
 
   # Hide haskell version if it doesn't come from one of these sources.
   #
@@ -1621,7 +1621,7 @@
   # Show battery in green when it's charging or fully charged.
   typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=2
   # Show battery in yellow when it's discharging.
-  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=3
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=5
   # Battery pictograms going from low to high level of charge.
   typeset -g POWERLEVEL9K_BATTERY_STAGES='\uf58d\uf579\uf57a\uf57b\uf57c\uf57d\uf57e\uf57f\uf580\uf581\uf578'
   # Don't show the remaining time to charge/discharge.
@@ -1631,7 +1631,7 @@
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=0
-  typeset -g POWERLEVEL9K_WIFI_BACKGROUND=4
+  typeset -g POWERLEVEL9K_WIFI_BACKGROUND=5
   # Custom icon.
   # typeset -g POWERLEVEL9K_WIFI_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
