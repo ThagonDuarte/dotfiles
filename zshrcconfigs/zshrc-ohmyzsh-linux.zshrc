@@ -173,7 +173,7 @@ alias red="\cp ~/p10kconfigs/p10k-red ~/.p10k.zsh ; exec zsh"
 alias discord="discord --disable-gpu-sandbox"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias zshcraft='\cp ~/zshrcconfigs/zshrc-ohmyzsh-archcraft.zshrc ~/.zshrc ; exec zsh'
-alias zsharch='\cp ~/zshrcconfigs/zshrc-ohmyzsh-linux ~/.zshrc ; exec zsh'
+alias zsharch='\cp ~/zshrcconfigs/zshrc-ohmyzsh-linux.zshrc ~/.zshrc ; exec zsh'
 
 # Keybinds
 bindkey "^[[1;5C" forward-word

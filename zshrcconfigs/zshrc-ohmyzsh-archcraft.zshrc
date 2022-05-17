@@ -19,7 +19,7 @@ export MICRO_TRUECOLOR=1
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="archcraft"
 # ZSH_THEME="archcraft"
 
 # Set list of themes to pick from when loading at random
@@ -173,7 +173,9 @@ alias orange="\cp ~/p10kconfigs/p10k-orange ~/.p10k.zsh ; exec zsh"
 alias round="\cp ~/p10kconfigs/p10k-round ~/.p10k.zsh ; exec zsh"
 alias red="\cp ~/p10kconfigs/p10k-red ~/.p10k.zsh ; exec zsh"
 alias discord="discord --disable-gpu-sandbox"
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias conf1ig='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias zshcraft='\cp ~/zshrcconfigs/zshrc-ohmyzsh-archcraft.zshrc ~/.zshrc ; exec zsh'
+alias zsharch='\cp ~/zshrcconfigs/zshrc-ohmyzsh-linux.zshrc ~/.zshrc ; exec zsh'
 
 # Keybinds
 bindkey "^[[1;5C" forward-word
