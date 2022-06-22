@@ -1,7 +1,5 @@
 format = """
-[](#d65d0e)\
 $username\
-[](bg:#32302f fg:#d65d0e)\
 $directory\
 [](fg:#32302f bg:#3c3836)\
 $git_branch\
@@ -19,12 +17,13 @@ $nim\
 $rust\
 [](fg:#504945 bg:#665c54)\
 $docker_context\
-[](fg:#665c54 bg:#458588)\
+[](fg:#665c54 bg:#7c6f64)\
+$battery\
+[](fg:#7c6f64 bg:#458588)\
 $time\
 [ ](fg:#458588)\
 \n   
 """
-
 
 
 # Disable the blank line at the start of the prompt
@@ -33,9 +32,9 @@ $time\
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bg:#d65d0e"
-style_root = "bg:#cc241d"
-format = '[$user ]($style)'
+style_user = "#d65d0e"
+style_root = "#cc241d"
+format = '[]($style)[$user ](bg:$style)[](fg:$style bg:#32302f)'
 
 [directory]
 style = "bg:#32302f"
@@ -123,5 +122,39 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 [time]
 disabled = false
 time_format = "%H:%M" # Hour:Minute Format
-style = "bg:#458588"
+style = "bg:#7c6f64"
 format = '[[ $time ](bg:#458588)]($style)'
+
+[battery]
+full_symbol = "   "
+charging_symbol = "  "
+format= "[$symbol$percentage ]($style)"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+discharging_symbol =  "   "
+style = " bg:#7c6f64"
+
+[[battery.display]]  # "bold orange"  style when capacity is between 10% and 30%
+threshold = 30
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 30% and 50%
+threshold = 50
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "ice " style when capacity is between 50% and 70%
+threshold = 70
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # " Green " style when capacity is between 70% and 90%
+threshold = 90
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "White " style when capacity is between 90% and 100%
+threshold = 100
+style = "bg:#7c6f64"
