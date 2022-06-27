@@ -28,16 +28,17 @@ getcolors() {
 getcolors
 
 ## Configurations --------------------------------------------#
+
+# ToggleDisplay Config
+sh ~/.scripts/toggleSetup.sh
+
 workspaces() {
-	name=1
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-		bspc monitor ${monitor}  -d '' '' '' '' '' '' '' '' ''
-		let name++
+		bspc monitor ${monitor} -d '' '' '' '' '' '' '' '' ''
 	done
 }
 
-bspc config remove_disabled_monitors true
 workspaces
 
 bspc config border_width 1
@@ -69,7 +70,8 @@ bspc rule -a firefox desktop='^2' follow=on focus=on
 bspc rule -a chromium desktop='^2' follow=on focus=on
 
 # 3 > files
-declare -a files=(Pcmanfm Thunar qBittorrent nextcloud)
+bspc rule -a Pcmanfm desktop='^3' state=pseudo_tiled follow=on focus=on
+declare -a files=(Thunar qBittorrent nextcloud)
 for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
@@ -123,7 +125,7 @@ bspc rule -a stalonetray state=floating manage=off
 ## Autostart -------------------------------------------------#
 
 # Kill if already running
-killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager
+killall -9 xsettingsd sxhkd dunst ksuperkey xfce4-power-manager polybar
 
 # Lauch xsettingsd daemon
 xsettingsd &
@@ -153,7 +155,7 @@ bash $HOME/.fehbg
 exec mpd &
 
 # Start bspwm scripts
-sh ~/.scripts/toggleSetup.sh
+#sh ~/.scripts/toggleSetup.sh
 bspcolors &
 bspbar &
 bspcomp &

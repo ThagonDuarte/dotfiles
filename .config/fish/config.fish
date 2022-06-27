@@ -3,5 +3,4 @@ if status is-interactive
     bind \b backward-kill-word
 end
 
-export STARSHIP_CONFIG=/home/alex/.config/starship/starship.toml
 starship init fish | source
