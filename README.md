@@ -54,7 +54,9 @@ Making the alias permanent in different shells:
 ```$ config checkout```
 4. Disable _showUntrackedFiles_:  
 ```$ config config --local status.showUntrackedFiles no```  
-5. And it's done! 
+5. Set upstream branch to master:  
+```config push --set-upstream origin master```
+6. And it's done! 
 
 ## Example usage
 
