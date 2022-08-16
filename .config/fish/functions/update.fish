@@ -1,3 +1,3 @@
-function update --wraps='sudo pacman -Syu; yay -Syu --devel' --description 'alias update=sudo pacman -Syu; yay -Syu --devel'
-  sudo pacman -Syu; yay -Syu --devel $argv; 
+function update --wraps='sudo pacman -Syu; prau -Syu --devel' --description 'alias update=sudo pacman -Syu; prau -Syu --devel'
+  sudo pacman -Syu; paru -Syu --devel $argv; 
 end
