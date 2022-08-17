@@ -52,11 +52,13 @@ Making the alias permanent in different shells:
     ```xargs -I{} mv {} .dotfiles-backup/{}```  
     - Re-run check out:     
 ```$ config checkout```
-4. Disable _showUntrackedFiles_:  
+5. Disable _showUntrackedFiles_:  
 ```$ config config --local status.showUntrackedFiles no```  
-5. Set upstream branch to master:  
+6. Set upstream branch to master:  
 ```config push --set-upstream origin master```
-6. And it's done! 
+7. If git repeatedly asks for login info:  
+```git config --global credential.helper store```  
+8. And it's done! 
 
 ## Example usage
 
