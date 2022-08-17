@@ -55,6 +55,7 @@ error_symbol= "\n [](#cc241d) "
 "Music" = " "
 "Pictures" = " "
 "Nextcloud" = " "
+"Uni" = " "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
 # will not be replaced, because "Documents" was already substituted before.
