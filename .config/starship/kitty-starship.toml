@@ -1,0 +1,177 @@
+format = """
+[](fg:#504945)\
+$directory\
+[](fg:#504945 bg:#665c54)\
+$git_branch\
+$git_status\
+[](fg:#665c54 bg:#7c6f64)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#7c6f64)\
+$docker_context\
+$status\
+$line_break\
+$character
+"""
+# $username\
+
+# [](fg:#665c54 bg:#7c6f64)\
+# $battery\
+# [](fg:#7c6f64 bg:#458588)\
+# $time\
+# [ ](fg:#458588)\
+
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+[line_break]
+disabled = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "#d65d0e"
+style_root = "#cc241d"
+format = '[]($style)[$user ](bg:$style)[](fg:$style bg:#32302f)'
+
+[directory]
+style = "bg:#504945 fg:bold"
+format = "[$path ]($style)"
+truncation_length = 4
+truncation_symbol = "…/"
+
+[character]
+success_symbol= " []() "
+error_symbol= " [](#cc241d) "
+
+[status]
+disabled = false
+format = '[ $common_meaning$signal_name $int]($style) '
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Nextcloud" = " "
+"Uni" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol $context ](bg:#458588)]($style) $path'
+
+[elixir]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#665c54"
+format = '[[ $symbol $branch ]($style)]($style)'
+
+[git_status]
+style = "bg:#665c54"
+format = '[[($all_status$ahead_behind )]($style)]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[java]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[nim]
+symbol = " "
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#7c6f64"
+format = '[[ $symbol ($version) ]($style)]($style)'
+
+[time]
+disabled = false
+time_format = "%H:%M" # Hour:Minute Format
+style = "bg:#7c6f64"
+format = '[[ $time ](bg:#458588)]($style)'
+
+[battery]
+full_symbol = "   "
+charging_symbol = "  "
+format= "[ $symbol$percentage ]($style)"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+discharging_symbol =  "   "
+style = " bg:#7c6f64"
+
+[[battery.display]]  # "bold orange"  style when capacity is between 10% and 30%
+threshold = 30
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 30% and 50%
+threshold = 50
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "ice " style when capacity is between 50% and 70%
+threshold = 70
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # " Green " style when capacity is between 70% and 90%
+threshold = 90
+discharging_symbol =  "   "
+style = "bg:#7c6f64"
+
+[[battery.display]]  # "White " style when capacity is between 90% and 100%
+threshold = 100
+style = "bg:#7c6f64"
