@@ -174,7 +174,7 @@ def get_battery_status():
     except Exception:
         status = "  "
     else:
-        if battery_pct < 0:
+        if battery_pct == 0:
             status = "  "
         else:
             status = f" {battery_pct}% {''[battery_pct // 10]} "
