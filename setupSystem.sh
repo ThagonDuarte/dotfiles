@@ -20,3 +20,5 @@ chmod +x ~/.scripts/* &
 rm ~/Pictures &
 ln -s ~/Nextcloud/Media/Pictures ~ &
 
+# Set evironemnt variables
+sudo cp ~/.systemfiles/environment /etc/environment
