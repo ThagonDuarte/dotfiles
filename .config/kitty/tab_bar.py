@@ -177,7 +177,7 @@ def get_battery_status():
         if battery_pct == 0:
             status = "  "
         else:
-            status = f" {battery_pct}% {''[battery_pct // 10]} "
+            status = f" {battery_pct}% {''[battery_pct // 10]} "
     return f"{status}"
 
 def get_next_cell():
