@@ -3,5 +3,7 @@
 scripts=("apps" "bar" "brightness" "fetch" "launcher" "powermenu" "quicklinks" "screenshot" "term" "wifimenu")
 
 for script in "${scripts[@]}"; do
-  ln -s ~/.scripts/$script.sh /usr/bin/$script
+  sudo rm /usr/bin/$script 
+  sudo chmod +x ~/.scripts/$script.sh 
+  sudo ln -s ~/.scripts/$script.sh /usr/bin/$script
 done
