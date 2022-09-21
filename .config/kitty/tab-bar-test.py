@@ -26,6 +26,22 @@ def currently_playing():
     return status
 
 
+def get_battery_status():
+    try:
+        battery_pct = int(subprocess.getoutput("upower -i /org/freedesktop/UPower/devices/battery_BAT1 | rg percentage | cut -d ':' -f 2 | tr -d ' ' | cut -d '%' -f 1"))
+    except Exception:
+        status = "  "
+    else:
+        if battery_pct == 0:
+            status = "  "
+        else:
+            status = f" {battery_pct}% {''[battery_pct // 10]} "
+    return f"{status}"
+
+
+
+
 battery_pct = subprocess.getoutput("upower -i /org/freedesktop/UPower/devices/battery_BAT1 | rg percentage | cut -d ':' -f 2 | tr -d ' ' | cut -d '%' -f 1")
 print(battery_pct)
+print(get_battery_status())
 print(currently_playing())
