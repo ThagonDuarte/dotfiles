@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd' ,'monospace', monospace",
+    "material-icon-theme.folders.color": "#90a4ae",
+    "workbench.statusBar.visible": false,
+    "window.menuBarVisibility": "toggle",
+    "terminal.integrated.allowMnemonics": true,
+    "window.titleBarStyle": "custom",
+    "markdown.preview.scrollPreviewWithEditor": false
+} 
