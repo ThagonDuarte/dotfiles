@@ -7,5 +7,6 @@
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.allowMnemonics": true,
     "window.titleBarStyle": "custom",
-    "markdown.preview.scrollPreviewWithEditor": false
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "workbench.activityBar.visible": false
 } 
