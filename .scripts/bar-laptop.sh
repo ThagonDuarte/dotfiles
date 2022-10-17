@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-~/.config/polybar/cuts/launch.sh
+~/.config/polybar/laptop/launch.sh

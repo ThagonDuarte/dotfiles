@@ -2,11 +2,13 @@
 
 # Add this script to your wm startup file.
 
-DIR="$HOME/.config/polybar/pc"
+DIR="$HOME/.config/polybar/laptop"
+STYLE="-round"
 
 # Terminate already running bar instances
 killall -q polybar
-
+# kill xembedsniproxy
+#
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
@@ -14,18 +16,17 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     if [ $m == "eDP-1" ]; then
-      MONITOR=$m polybar --reload -q top -c "$DIR"/config.ini &
-      MONITOR=$m polybar --reload -q bottom -c "$DIR"/config.ini &
+      MONITOR=$m polybar --reload -q top-center -c "$DIR"/config${STYLE}.ini &
     fi  
     if [ $m == "DP-3-1" ]; then
-      MONITOR=$m polybar --reload -q top -c "$DIR"/config.ini &
-      MONITOR=$m polybar --reload -q bottom -c "$DIR"/config.ini &
+      MONITOR=$m polybar --reload -q top -c "$DIR"/config$(STYLE).ini &
+      MONITOR=$m polybar --reload -q bottom -c "$DIR"/config$(STYLE).ini &
     fi  
     if [ $m == "DP-3-2" ]; then
-      MONITOR=$m polybar --reload -q top-center -c "$DIR"/config.ini &
+      MONITOR=$m polybar --reload -q top-center -c "$DIR"/config$(STYLE).ini &
     fi  
   done
 else
-  polybar -q top -c "$DIR"/config.ini &
-  polybar -q bottom -c "$DIR"/config.ini &
+  polybar -q top -c "$DIR"/config$(STYLE).ini &
+  polybar -q bottom -c "$DIR"/config$(STYLE).ini &
 fi
