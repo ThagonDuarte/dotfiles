@@ -9,6 +9,6 @@ if pgrep -x picom; then
   killall -q picom 
 else
   # Launch picom
-  picom &
+  picom --experimental-backends&
 fi
 
