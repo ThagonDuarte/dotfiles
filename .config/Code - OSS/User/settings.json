@@ -10,5 +10,6 @@
     "window.titleBarStyle": "custom",
     "markdown.preview.scrollPreviewWithEditor": false,
     "window.zoomLevel": 1,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "latex-workshop.latex.outDir": "%DIR%/out"
 } 
