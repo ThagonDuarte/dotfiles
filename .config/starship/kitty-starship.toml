@@ -1,4 +1,5 @@
 format = """
+$hostname\
 [](fg:#504945)\
 $directory\
 [](fg:#504945 bg:#665c54)\
@@ -42,6 +43,11 @@ show_always = true
 style_user = "#d65d0e"
 style_root = "#cc241d"
 format = '[]($style)[$user ](bg:$style)[](fg:$style bg:#32302f)'
+
+[hostname]
+ssh_only = true
+format = "[](fg:#fb4934)[$hostname](bg:#fb4934 fg:#282828)[](fg:#fb4934) "
+disabled = false
 
 [directory]
 style = "bg:#504945 fg:bold"

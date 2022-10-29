@@ -18,15 +18,15 @@ if type "xrandr"; then
     if [ $m == "eDP-1" ]; then
       MONITOR=$m polybar --reload -q top-center -c "$DIR"/config${STYLE}.ini &
     fi  
-    if [ $m == "DP-3-1" ]; then
-      MONITOR=$m polybar --reload -q top -c "$DIR"/config$(STYLE).ini &
-      MONITOR=$m polybar --reload -q bottom -c "$DIR"/config$(STYLE).ini &
-    fi  
+    #if [ $m == "DP-3-1" ]; then
+      #MONITOR=$m polybar --reload -q top -c "$DIR"/config${STYLE}.ini &
+      #MONITOR=$m polybar --reload -q bottom -c "$DIR"/config${STYLE}.ini &
+    #fi  
     if [ $m == "DP-3-2" ]; then
-      MONITOR=$m polybar --reload -q top-center -c "$DIR"/config$(STYLE).ini &
+      MONITOR=$m polybar --reload -q top-center -c "$DIR"/config${STYLE}.ini &
     fi  
   done
 else
-  polybar -q top -c "$DIR"/config$(STYLE).ini &
-  polybar -q bottom -c "$DIR"/config$(STYLE).ini &
+  polybar -q top -c "$DIR"/config${STYLE}.ini &
+  polybar -q bottom -c "$DIR"/config${STYLE}.ini &
 fi
