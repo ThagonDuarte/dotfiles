@@ -15,9 +15,9 @@ change_style() {
 
 	* {
 	  al:   #00000000;
-	  bg:   #${BG}BF;
-	  bga:  #${BG}FF;
-	  fg:   #${FG}FF;
+	  bg:   #${BG};
+	  bga:  #${BG};
+	  fg:   #${FG};
 	  ac:   ${AC}FF;
 	  se:   ${AC}1A;
 	}
