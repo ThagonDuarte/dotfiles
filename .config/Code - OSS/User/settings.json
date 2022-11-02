@@ -7,9 +7,9 @@
     "workbench.statusBar.visible": false,
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.allowMnemonics": true,
-    "window.titleBarStyle": "custom",
     "markdown.preview.scrollPreviewWithEditor": false,
-    "window.zoomLevel": 1,
     "explorer.confirmDelete": false,
-    "latex-workshop.latex.outDir": "%DIR%/out"
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "window.zoomLevel": 1,
+    "workbench.activityBar.visible": false
 } 
