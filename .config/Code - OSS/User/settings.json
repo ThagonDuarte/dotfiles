@@ -1,15 +1,13 @@
 {
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "'FiraCode Nerd' ,'monospace', monospace",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd' ,'monospace', monospace",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "material-icon-theme.folders.color": "#90a4ae",
-    "workbench.statusBar.visible": false,
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.allowMnemonics": true,
     "window.titleBarStyle": "custom",
     "markdown.preview.scrollPreviewWithEditor": false,
-    "window.zoomLevel": 1,
     "explorer.confirmDelete": false,
     "latex-workshop.latex.outDir": "%DIR%/out"
 } 

@@ -9,4 +9,5 @@ MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
    case "$MENU" in
       *Round) "$DIR"/setstyle.sh --mode1 ;;
       *Cuts) "$DIR"/setstyle.sh --mode2 ;;
+      *Colorfull Pills) "$DIR"/setstyle.sh --mode3 ;;
    esac

@@ -3,7 +3,7 @@
 # Add this script to your wm startup file.
 
 DIR="$HOME/.config/polybar/laptop"
-STYLE="-round"
+STYLE="-pills"
 
 # Terminate already running bar instances
 killall -q polybar

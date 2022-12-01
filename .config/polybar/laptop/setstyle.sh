@@ -38,4 +38,10 @@ elif  [[ $1 = "--mode2" ]]; then
 	AC="#FB4934"
     STYLE="-cuts"
     change_style
+elif  [[ $1 = "--mode3" ]]; then
+    BG="3C3836"
+	FG="EBDBB2"
+	AC="#FB4934"
+    STYLE="-pills"
+    change_style
 fi
