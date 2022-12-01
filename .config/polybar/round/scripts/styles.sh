@@ -8,7 +8,7 @@ RFILE="$HOME/.config/polybar/rofi/colors.rasi"
 change_color() {
 	# polybar
 	sed -i -e "s/background = #.*/background = #${BG}/g" $PFILE
-	sed -i -e "s/background-alt = #.*/background-alt = #8C${BG}/g" $PFILE
+	sed -i -e "s/background-alt = #.*/background-alt = #${BGA}/g" $PFILE
 	sed -i -e "s/foreground = #.*/foreground = #${FG}/g" $PFILE
 	sed -i -e "s/foreground-alt = #.*/foreground-alt = #33${FG}/g" $PFILE
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
@@ -62,6 +62,7 @@ elif  [[ $1 = "--mode6" ]]; then
 	change_color
 elif  [[ $1 = "--mode7" ]]; then
 	BG="3C3836"
+	BGA="282828"
 	FG="EBDBB2"
 	AC="#FB4934"
 	change_color

@@ -6,8 +6,9 @@
     "material-icon-theme.folders.color": "#90a4ae",
     "window.menuBarVisibility": "toggle",
     "terminal.integrated.allowMnemonics": true,
-    "window.titleBarStyle": "custom",
     "markdown.preview.scrollPreviewWithEditor": false,
     "explorer.confirmDelete": false,
-    "latex-workshop.latex.outDir": "%DIR%/out"
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "window.zoomLevel": 1,
+    "workbench.activityBar.visible": false
 } 

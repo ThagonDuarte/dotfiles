@@ -15,5 +15,9 @@
     {
         "key": "ctrl+[Quote]",
         "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+[Backslash]",
+        "command": "workbench.action.customizeLayout"
     }
 ]
