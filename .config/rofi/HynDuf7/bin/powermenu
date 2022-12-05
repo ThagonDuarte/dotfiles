@@ -92,7 +92,7 @@ case ${chosen} in
 		run_cmd --hibernate
         ;;
     $lock)
-	    xdg-screensaver lock	
+	  swaylock	
         ;;
     $suspend)
 		run_cmd --suspend
