@@ -1,0 +1,147 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 0,
+
+  "modules-left": ["custom/launcher", "wlr/workspaces"],
+  "modules-center": [
+    "custom/spotify-title",
+    "custom/spotify-prev",
+    "custom/spotify-toggle",
+    "custom/spotify-next"
+  ],
+  "modules-right": [
+    "tray",
+    "backlight",
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock",
+    "custom/power"
+  ],
+
+  "wlr/taskbar": {
+    "format": "{icon} {app_id}",
+    "icon-size": 15,
+    "icon-theme": "Papirus",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "on-click-right": "minimize-raise",
+    "ignore-list": ["kitty"],
+    "app_ids-mapping": {}
+  },
+
+  "wlr/workspaces": {
+    // "disable-scroll": true,
+    "sort-by-number": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "format-icons": {
+      "1": "<span color=\"#EBDBB2\"></span>",
+      "2": "<span color=\"#EBDBB2\"></span>",
+      "3": "<span color=\"#EBDBB2\"></span>",
+      "4": "<span color=\"#EBDBB2\"></span>",
+      "5": "<span color=\"#EBDBB2\"></span>",
+      "6": "<span color=\"#EBDBB2\"></span>",
+      "7": "<span color=\"#EBDBB2\"></span>",
+      "8": "<span color=\"#EBDBB2\"></span>",
+      "9": "<span color=\"#EBDBB2\"></span>",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+    "timezone": "Europe/Berlin",
+    "format": "{:%H:%M }",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d.%m.%Y }"
+  },
+  "clock#time": {
+    "interval": 1,
+    "format": "  {:%H:%M:%S} ",
+    "tooltip": false
+  },
+
+  "clock#date": {
+    "interval": 10,
+    "format": "  {:%e %b %y} ", // icon: calendar-alt
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "network": {
+    "format-wifi": "直 {essid}",
+    "format-ethernet": "  {essid}",
+    "format-linked": "{ifname} (no ip) ",
+    "format-disconnected": "睊 disconnected",
+    "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", ""],
+    "on-scroll-up": "xbacklight -inc 5",
+    "on-scroll-down": "xbacklight -dec 5"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  muted",
+    "scroll-step": 5,
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-middle": "pavucontrol",
+    "on-click-right": "~/.config/hypr/scripts/pactl_toggle.sh",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", "墳", ""]
+    }
+  },
+  "custom/launcher": {
+    "format": "  ",
+    "on-click": "launcher"
+  },
+  "custom/power": {
+    "format": " ⏻ ",
+    "on-click": "powermenu"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon} ",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "custom/spotify-title": {
+    "format": " {}",
+    "exec": "$HOME/.config/waybar/scripts/media info"
+  },
+  "custom/spotify-prev": {
+    "format": "",
+    "on-click": "$HOME/.config/waybar/scripts/media prev"
+  },
+  "custom/spotify-toggle": {
+    "format": "{}",
+    "exec": "$HOME/.config/waybar/scripts/media icon",
+    "on-click": "$HOME/.config/waybar/scripts/media toggle"
+  },
+  "custom/spotify-next": {
+    "format": "",
+    "on-click": "$HOME/.config/waybar/scripts/media next"
+  }
+}
