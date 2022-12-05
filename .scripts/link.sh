@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scripts=("apps" "bar-pc" "bar-laptop" "brightness" "fetch" "launcher" "powermenu" "quicklinks" "screenshot" "term" "wifimenu" "wrappedhl" "togglepicom")
+scripts=("apps" "brightness" "fetch" "launcher" "powermenu" "quicklinks" "screenshot" "togglebar" "wifimenu" "wrappedhl")
 
 for script in "${scripts[@]}"; do
   sudo rm /usr/bin/$script 
