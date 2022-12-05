@@ -1,3 +1,3 @@
 function palette
-  kitty +kitten icat ~/gruvbox-palette.png
+  kitty +kitten icat ~/.misc/gruvbox-palette.png
 end
