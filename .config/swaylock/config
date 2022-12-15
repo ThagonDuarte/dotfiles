@@ -2,7 +2,7 @@ font=Lato
 
 clock
 timestr=%R
-datestr=%a %B %e
+datestr=%a %e. %B
 
 screenshots
 
