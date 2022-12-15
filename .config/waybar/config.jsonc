@@ -2,27 +2,38 @@
   "layer": "top",
   "position": "top",
   "height": 0,
+  "gtk-layer-shell": true,
 
-  "modules-left": ["custom/launcher", "wlr/workspaces"],
-  "modules-center": [
+  "modules-left": [
+    "custom/launcher",
+    "wlr/workspaces",
+    "hyprland/window",
     "custom/spotify-title",
     "custom/spotify-prev",
     "custom/spotify-toggle",
     "custom/spotify-next"
   ],
+  "modules-center": ["clock"],
   "modules-right": [
-    "tray",
+    "custom/leftspacer",
     "backlight",
     "pulseaudio",
+    "bluetooth",
+    "custom/middlespacer",
     "network",
+    // "clock#date",
     "battery",
-    "clock",
+    "custom/middlespacer",
+    "custom/packages",
+    "custom/middlespacer",
+    "tray",
+    "custom/middlespacer",
     "custom/power"
   ],
 
   "wlr/taskbar": {
     "format": "{icon} {app_id}",
-    "icon-size": 15,
+    "icon-size": 16,
     "icon-theme": "Papirus",
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -31,7 +42,10 @@
     "ignore-list": ["kitty"],
     "app_ids-mapping": {}
   },
-
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+  },
   "wlr/workspaces": {
     // "disable-scroll": true,
     "sort-by-number": true,
@@ -45,10 +59,10 @@
       "2": "<span color=\"#EBDBB2\"></span>",
       "3": "<span color=\"#EBDBB2\"></span>",
       "4": "<span color=\"#EBDBB2\"></span>",
-      "5": "<span color=\"#EBDBB2\"></span>",
-      "6": "<span color=\"#EBDBB2\"></span>",
-      "7": "<span color=\"#EBDBB2\"></span>",
-      "8": "<span color=\"#EBDBB2\"></span>",
+      "5": "<span color=\"#EBDBB2\">ﴬ</span>",
+      "6": "<span color=\"#EBDBB2\"></span>",
+      "7": "<span color=\"#EBDBB2\"></span>",
+      "8": "<span color=\"#EBDBB2\"></span>",
       "9": "<span color=\"#EBDBB2\"></span>",
       "urgent": "",
       "focused": "",
@@ -57,7 +71,7 @@
   },
 
   "tray": {
-    "icon-size": 13,
+    "icon-size": 16,
     "spacing": 10
   },
   "clock": {
@@ -74,7 +88,7 @@
 
   "clock#date": {
     "interval": 10,
-    "format": "  {:%e %b %y} ", // icon: calendar-alt
+    "format": " {:%e %b %y}", // icon: calendar-alt
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
 
@@ -85,9 +99,22 @@
     "format-disconnected": "睊 disconnected",
     "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
   },
+  "bluetooth": {
+    "format-on": "",
+    "format-off": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueberry",
+    "on-click-right": "~/.scripts/bluetooth.sh --toggle"
+  },
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", ""],
+    "format-icons": ["", "", "", "", "", "", ""],
     "on-scroll-up": "xbacklight -inc 5",
     "on-scroll-down": "xbacklight -dec 5"
   },
@@ -108,6 +135,15 @@
       "default": ["", "", "墳", ""]
     }
   },
+  "custom/leftspacer": {
+    "format": " "
+  },
+  "custom/rightspacer": {
+    "format": " "
+  },
+  "custom/middlespacer": {
+    "format": "⏽"
+  },
   "custom/launcher": {
     "format": "  ",
     "on-click": "launcher"
@@ -115,6 +151,11 @@
   "custom/power": {
     "format": " ⏻ ",
     "on-click": "powermenu"
+  },
+  "custom/packages": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "on-click": "kitty paru"
   },
   "battery": {
     "states": {

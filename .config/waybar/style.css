@@ -3,21 +3,24 @@
   border-radius: 0px;
   font-family: Roboto, RobotoMono Nerd Font;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   min-height: 0;
 }
 
 window#waybar {
-  background: #1d2021;
+  background: transparent;
+  /* background: #282828; */
   color: #ebdbb2;
+  border-color: #fb4934;
+  border-width: 2px;
 }
 
 tooltip {
   background: #282828;
-  border-radius: 10px;
+  border-radius: 0px;
   border-width: 2px;
   border-style: solid;
-  border-color: #1d2021;
+  border-color: #665c54;
 }
 #workspaces button {
   padding: 0 0.6em;
@@ -51,35 +54,120 @@ tooltip {
 
 #custom-power,
 #custom-launcher,
+#custom-spotify-prev,
+#custom-spotify-toggle,
+#custom-spotify-title,
+#custom-spotify-next,
+#custom-leftspacer,
+#custom-middlespacer,
+#custom-packages,
 #date,
 #clock,
 #backlight,
 #pulseaudio,
+#bluetooth,
 #network,
 #workspaces,
 #mpd,
 #battery,
-#custom-spotify-title,
-#custom-spotify-prev,
-#custom-spotify-toggle,
-#custom-spotify-next,
+#window,
 #tray {
+  border: solid;
+  border-width: 2px;
+  border-color: #665c54;
   background: #32302f;
   padding: 0 0.6em;
   margin-right: 4px;
   margin-left: 4px;
   margin-top: 4px;
-  margin-bottom: 4px;
-  border-radius: 6px;
+  margin-bottom: 0px;
+  border-radius: 10px;
 }
 
+#custom-spotify-title,
+#bluetooth {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 0px;
+}
+
+#custom-middlespacer,
+#custom-spotify-prev,
+#custom-spotify-toggle,
+#backlight,
+#custom-packages,
 #tray {
-  margin-right: 6px;
+  border: solid;
+  border-right: none;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
+#custom-middlespacer {
+  padding: 0;
+  color: #665c54;
+}
+
+#custom-spotify-next,
 #network {
+  border: solid;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px 10px 10px 0px;
+  margin-left: 0px;
+}
+
+#battery {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 0px;
+}
+
+#pulseaudio,
+#custom-power {
+  border: solid;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px 10px 10px 0px;
+  margin-left: 0px;
+}
+
+#custom-spotify-title,
+#bluetooth {
   color: #ebdbb2;
-  margin-right: 6px;
+  margin-right: 0px;
+}
+
+#custom-leftspacer {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin: 4px 0px 0px 0px;
+  padding: 0px;
+}
+
+#custom-rightspacer {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin: 0px 0px 0px 4px;
+  padding: 0px;
 }
 
 #pulseaudio {
@@ -91,6 +179,7 @@ tooltip {
 #custom-launcher {
   color: #fb4934;
   background: #32302f;
+  padding: 0 0.4em 0 0.2em;
 }
 
 #clock {
