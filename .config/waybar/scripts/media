@@ -20,7 +20,7 @@ function title() {
         fi
         echo $title
     else
-        echo "Nothing Playing"
+        return 1 
     fi
 }
 
@@ -39,9 +39,17 @@ function artist() {
 }
 
 function info() {
-    echo "$(title)  $(artist)"
-    playerctl -p $player --follow metadata title | while read -r _; do
+    if title; then
         echo "$(title)  $(artist)"
+    else 
+        echo "$(artist)"
+    fi
+    playerctl -p $player --follow metadata title | while read -r _; do
+        if title; then
+            echo "$(title)  $(artist)"
+        else
+            echo "$(artist)"
+        fi
     done
 }
 

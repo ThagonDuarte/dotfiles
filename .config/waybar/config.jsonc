@@ -97,7 +97,9 @@
     "format-ethernet": "  {essid}",
     "format-linked": "{ifname} (no ip) ",
     "format-disconnected": "睊 disconnected",
-    "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}"
+    "tooltip-format-wifi": "signal strenght: {signalstrength}% | down speed: {bandwidthdownbits}, up speed: {bandwidthupbits}",
+    "on-click": "wifimenu",
+    "on-click-right": "XDG_CURRENT_DESKTOP=KDE kcmshell5 kcm_networkmanagement"
   },
   "bluetooth": {
     "format-on": "",
@@ -155,7 +157,7 @@
   "custom/packages": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/updates.sh",
-    "on-click": "kitty paru"
+    "on-click": "hyprctl dispatch -- exec [workspace special:config silent] kitty paru"
   },
   "battery": {
     "states": {
