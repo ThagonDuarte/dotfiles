@@ -1,5 +1,5 @@
 # Initial setup for fish.
-script_dir="~/.config/fish"
+set script_dir "~/.config/fish"
 
 # disable greeting
 set -U fish_greeting
