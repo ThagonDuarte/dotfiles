@@ -11,11 +11,13 @@ Apply (parts of) the configuration to the system.
 
 Available options (at least one required):
   -a    Apply all of the configuration, equivalent to -slpfn
-  -s    Install git submodules
+  -s    Install user scripts
+  -u    Install git submodules
   -l    Create symlinks for configuration files and directories
   -p    Install packages listed in packages.txt using paru
   -n    Setup neovim and install neovim plugins
   -f    Setup fish and install fish plugins
+  -y    Install hyprland related packages and configuration files
   -h    Show this help message"
     exit 0
 }
@@ -35,22 +37,26 @@ print_error() {
 }
 
 # flags to be set
+install_user_scripts=false
 install_submodules=false
 create_links=false
 install_packages=false
 setup_nvim=false
 setup_fish=false
+setup_hyprland=false
 
 # set flags according to input parameters
-while getopts "aslpfnh" arg; do
+while getopts "asulpfnyh" arg; do
     case $arg in
-        "a") install_submodules=true create_links=true; install_packages=true;
-             setup_fish=true; setup_nvim=true ;;
-        "s") install_submodules=true ;;
+        "a") install_user_scripts=true; install_submodules=true create_links=true; install_packages=true;
+             setup_fish=true; setup_nvim=true; setup_hyprland=true ;;
+        "s") install_user_scripts=true ;;
+        "u") install_submodules=true ;;
         "l") create_links=true ;;
         "p") install_packages=true ;;
         "f") setup_fish=true ;;
         "n") setup_nvim=true ;;
+        "y") setup_hyprland=true ;;
         "h") print_usage; exit 0 ;;
         "?") print_error; exit 1 ;;
     esac
@@ -79,24 +85,33 @@ fi
 if [ "$create_links" = true ]; then
     print_debug "Creating symlinks for the configuration files and directories..."
     mkdir -p "$config_dir"
-    $ln_cmd "$dot_dir/aerc" "$config_dir/"
-    $ln_cmd "$dot_dir/alacritty" "$config_dir/"
-    $ln_cmd "$dot_dir/conky/" "$config_dir/"
-    $ln_cmd "$dot_dir/conky/conky-$device.conf" "$dot_dir/conky/conky.conf"
+    $ln_cmd "$dot_dir/btop" "$config_dir/"
+    $ln_cmd "$dot_dir/cava" "$config_dir/"
+    $ln_cmd "$dot_dir/Code - OSS/User" "$config_dir/Code - OSS/"
+    $ln_cmd "$dot_dir/dunst" "$config_dir/"
     $ln_cmd "$dot_dir/git" "$config_dir/"
     $ln_cmd "$dot_dir/gtk/gtk-3.0" "$config_dir/"
     $ln_cmd "$dot_dir/gtk/gtk-4.0" "$config_dir/"
-    $ln_cmd "$dot_dir/lesskey" "$config_dir/"
+    $ln_cmd "$dot_dir/kitty" "$config_dir/"
+    $ln_cmd "$dot_dir/misc" "$config_dir/../.misc"
     $ln_cmd "$dot_dir/ranger" "$config_dir/"
     $ln_cmd "$dot_dir/rofi" "$config_dir/"
-    $ln_cmd "$dot_dir/starship.toml" "$config_dir/"
-    $ln_cmd "$dot_dir/spectrwm" "$config_dir/"
-    $ln_cmd "$dot_dir/user-dirs.dirs" "$config_dir/"
+    $ln_cmd "$dot_dir/starship" "$config_dir/"
+    $ln_cmd "$dot_dir/tmux" "$config_dir/"
     $ln_cmd "$dot_dir/vimrc" "$HOME/.vimrc"
-    $ln_cmd "$dot_dir/xorg/xinitrc" "$HOME/.xinitrc"
-    $ln_cmd "$dot_dir/xorg/xresources" "$HOME/.Xresources"
-    $ln_cmd "$dot_dir/xorg/xserverrc" "$HOME/.xserverrc"
     $ln_cmd "$dot_dir/zathura" "$config_dir/"
+    print_debug ""
+fi
+
+# install my own scripts
+if [ "$install_user_scripts" = true ]; then
+    print_debug "Installing user created scripts to /usr/bin/ ..."
+    for script in `ls $dot_dir/scripts`; do
+        if [ $script != link.sh ]; then
+            sudo chmod +x ~/.scripts/$script 
+            sudo $ln_cmd -f "$dot_dir/scripts/$script" /usr/bin/`echo $script | cut -d "." -f 1`
+        fi
+    done 
     print_debug ""
 fi
 
@@ -104,6 +119,15 @@ fi
 if [ "$install_packages" = true ]; then
     print_debug "Installing packages from package.txt using paru..."
     paru -S --needed - < "$dot_dir/packages.txt"
+    print_debug ""
+fi
+
+# install hyprland related packages and move its config files to ~/.config
+if [ "$setup_hyprland" = true ]; then
+    print_debug "Installing packages from package-hyprland.txt using paru..."
+    paru -S --needed - < "$dot_dir/packages-hyprland.txt"
+    print_debug "Creating symlinks for hyprland config files"
+    $ln_cmd "$dot_dir/hyprland" "$config_dir"
     print_debug ""
 fi
 
@@ -126,6 +150,14 @@ if [ "$setup_nvim" = true ]; then
     nvim --headless -c 'AstroUpdate' -c 'quitall' 2> /dev/null
     print_debug "Syncing neovim plugins using packer..."
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' 2> /dev/null
+    print_debug ""
+fi
+
+# setup firefox custom css
+if [ "$setup_firefox" = true ]; then
+    print_debug "Moving firefox custom css files..."
+    $ln_cmd "$dot_dir/firefox "
+    print_debug "Setting firefox variables..."
     print_debug ""
 fi
 

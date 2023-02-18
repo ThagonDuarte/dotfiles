@@ -1,0 +1,8 @@
+hyprland-bin
+swaybg
+swayidle
+swaylock-effects
+rofi-calc
+rofi-lbonn-wayland-git
+waybar-hyprland-git
+xdg-desktop-portal-hyprland-git
