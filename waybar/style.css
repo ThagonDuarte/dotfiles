@@ -1,0 +1,218 @@
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: Roboto, RobotoMono Nerd Font;
+  font-weight: bold;
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  /* background: #282828; */
+  color: #ebdbb2;
+  border-color: #fb4934;
+  border-width: 2px;
+}
+
+tooltip {
+  background: #282828;
+  border-radius: 0px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #665c54;
+}
+#workspaces button {
+  padding: 0 0.6em;
+  color: #504945;
+  border-radius: 6px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#workspaces button.active {
+  color: #ebdbb2;
+  background: #4e635b;
+}
+
+#workspaces button.focused {
+  color: #ebdbb2;
+  background: #4e635b;
+}
+
+#workspaces button.urgent {
+  color: #1d2021;
+  background: #fb4934;
+}
+
+#workspaces button:hover {
+  background: #4e635b;
+  color: #ebdbb2;
+}
+
+#custom-power,
+#custom-launcher,
+#custom-spotify-prev,
+#custom-spotify-toggle,
+#custom-spotify-title,
+#custom-spotify-next,
+#custom-leftspacer,
+#custom-middlespacer,
+#custom-packages,
+#date,
+#clock,
+#backlight,
+#pulseaudio,
+#bluetooth,
+#network,
+#workspaces,
+#mpd,
+#battery,
+#window,
+#tray {
+  border: solid;
+  border-width: 2px;
+  border-color: #665c54;
+  background: #32302f;
+  padding: 0 0.6em;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+}
+
+#custom-spotify-title,
+#bluetooth {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 0px;
+}
+
+#custom-middlespacer,
+#custom-spotify-prev,
+#custom-spotify-toggle,
+#backlight,
+#custom-packages,
+#tray {
+  border: solid;
+  border-right: none;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#custom-middlespacer {
+  padding: 0;
+  color: #665c54;
+}
+
+#custom-spotify-next,
+#network {
+  border: solid;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px 10px 10px 0px;
+  margin-left: 0px;
+}
+
+#battery {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin-right: 0px;
+}
+
+#pulseaudio,
+#custom-power {
+  border: solid;
+  border-left: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 0px 10px 10px 0px;
+  margin-left: 0px;
+}
+
+#custom-spotify-title,
+#bluetooth {
+  color: #ebdbb2;
+  margin-right: 0px;
+}
+
+#custom-leftspacer {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin: 4px 0px 0px 0px;
+  padding: 0px;
+}
+
+#custom-rightspacer {
+  border: solid;
+  border-right: none;
+  border-width: 2px;
+  border-color: #665c54;
+  border-radius: 10px 0px 0px 10px;
+  margin: 0px 0px 0px 4px;
+  padding: 0px;
+}
+
+#pulseaudio {
+  margin-right: 6px;
+  color: #ebdbb2;
+}
+
+#custom-power,
+#custom-launcher {
+  color: #fb4934;
+  background: #32302f;
+  padding: 0 0.4em 0 0.2em;
+}
+
+#clock {
+  color: #ebdbb2;
+  margin-right: 6px;
+}
+
+#taskbar {
+  background: #1d2021;
+  padding: 0 0.6em;
+  margin-right: 10px;
+  margin-left: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  color: #ebdbb2;
+}
+
+#taskbar button {
+  border-radius: 6px;
+  background: #32302f;
+  color: #a89984;
+  margin-right: 6px;
+}
+
+#taskbar button.minimized {
+  border-radius: 6px;
+  background: #32302f;
+  color: #a89984;
+}
+
+#taskbar button.active {
+  border-radius: 6px;
+  background: #4e635b;
+  color: #ebdbb2;
+}

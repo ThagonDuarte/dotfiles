@@ -127,7 +127,9 @@ if [ "$setup_hyprland" = true ]; then
     print_debug "Installing packages from package-hyprland.txt using paru..."
     paru -S --needed - < "$dot_dir/packages-hyprland.txt"
     print_debug "Creating symlinks for hyprland config files"
-    $ln_cmd "$dot_dir/hyprland" "$config_dir"
+    $ln_cmd "$dot_dir/hypr" "$config_dir"
+    $ln_cmd "$dot_dir/swaylock" "$config_dir"
+    $ln_cmd "$dot_dir/waybar" "$config_dir"
     print_debug ""
 fi
 
