@@ -22,5 +22,5 @@ export STARSHIP_CONFIG=$HOME/.config/starship/kitty-starship.toml
 curl -sL https://git.io/fisher | source && fisher update
 
 # add paths
-fish_add_path /home/alex-kde/.spicetify
-fish_add_path ~/.local/bin
+# fish_add_path /home/alex-kde/.spicetify
+# fish_add_path ~/.local/bin
