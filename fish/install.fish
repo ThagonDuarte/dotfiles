@@ -16,7 +16,6 @@ source "$script_dir/aliases.fish"
 # use starship as prompt
 starship init fish | source
 funcsave fish_prompt
-export STARSHIP_CONFIG=$HOME/.config/starship/kitty-starship.toml
 
 # install plugins listed in fish_plugins
 curl -sL https://git.io/fisher | source && fisher update
