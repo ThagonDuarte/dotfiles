@@ -1,0 +1,48 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'FiraCode Nerd Font' ,'monospace', monospace",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font', 'JetBrainsMono Nerd Font'",
+  "material-icon-theme.folders.color": "#90a4ae",
+  "terminal.integrated.allowMnemonics": true,
+  "editor.fontLigatures": true,
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "explorer.confirmDelete": false,
+  "latex-workshop.latex.outDir": "%DIR%/output",
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "grammarly.files.include": [
+    "**/readme.md",
+    "**/README.md",
+    "**/*.txt",
+    "**/*.tex"
+  ],
+  "cSpell.enableFiletypes": ["latex"],
+  "cSpell.language": "en,de-DE",
+  "ltex.language": "de-DE",
+  "editor.minimap.renderCharacters": false,
+  "latex-workshop.view.autoFocus.enabled": true,
+  "latex-workshop.view.pdf.zoom": "page-width",
+  "latex-workshop.synctex.afterBuild.enabled": true,
+  "latex-workshop.showContextMenu": true,
+  "window.titleBarStyle": "custom",
+  "window.experimental.nativeContextMenuLocation": false,
+  "explorer.confirmDragAndDrop": false,
+  "git.openRepositoryInParentFolders": "never",
+  "window.zoomLevel": 3,
+  "githubPullRequests.remotes": ["hulk"],
+  "githubPullRequests.pullBranch": "never",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.enableSmartCommit": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "rust-analyzer.check.command": "clippy",
+  "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
+  "MATLAB.installPath": "/usr/bin/octave",
+  "MATLAB.showFeatureNotAvailableError": false,
+  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "ruff.nativeServer": "on"
+}
