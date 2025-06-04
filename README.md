@@ -1,4 +1,12 @@
-# Installing 
+# Installing
+
+## System packages
+
+### Arch 
+
+`$ paru -S (cat ./packages.txt)`
+
+## Dotfiles
 
 `$ stow -S alacritty btop Code fish ghostty helix kitty ranger starship zellij`
 
