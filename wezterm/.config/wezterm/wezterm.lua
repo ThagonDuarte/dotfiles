@@ -10,6 +10,7 @@ config.color_scheme = 'GruvboxDark'config.window_padding = {
   bottom = '0.25cell',
 }
 
+config.pane_focus_follows_mouse = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
@@ -145,6 +146,15 @@ config.keys = {
   },
   { key = 'n', mods = 'CTRL|SHIFT', action = act.RotatePanes 'Clockwise' },
   { key = 'l', mods = 'CTRL|SHIFT', action = act.ShowLauncher },
+  { key = 's', mods = 'SHIFT|ALT', action = act.PaneSelect },
+  {
+    key = 's',
+    mods = 'ALT',
+    action = act.PaneSelect {
+      mode = 'SwapWithActive',
+    },
+  },
+
 }
 
 return config
