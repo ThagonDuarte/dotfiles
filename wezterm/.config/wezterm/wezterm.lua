@@ -3,7 +3,8 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 config.font = wezterm.font 'FiraCode Nerd Font'
-config.color_scheme = 'GruvboxDark'config.window_padding = {
+config.color_scheme = 'GruvboxDark'
+config.window_padding = {
   left = '0.5cell',
   right = '0.5cell',
   top = '0.25cell',
@@ -76,9 +77,9 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
         { Text = " " .. title .. " " },
         { Foreground = { Color = "#232323" } },
         { Text = SOLID_SEPARATOR },
-       }
+      }
     end
-  else  
+  else
     return {
       { Text = " " .. title .. " " },
     }
@@ -144,11 +145,11 @@ config.keys = {
     mods = 'CTRL|SHIFT',
     action = act.RotatePanes 'CounterClockwise',
   },
-  { key = 'n', mods = 'CTRL|SHIFT', action = act.RotatePanes 'Clockwise' },
-  { key = 'l', mods = 'CTRL|SHIFT', action = act.ShowLauncher },
-  { key = 's', mods = 'SHIFT|ALT', action = act.PaneSelect },
+  { key = 'n', mods = 'CTRL|SHIFT',     action = act.RotatePanes 'Clockwise' },
+  { key = 'l', mods = 'CTRL|SHIFT',     action = act.ShowLauncher },
+  { key = 'x', mods = 'SHIFT|ALT',      action = act.PaneSelect },
   {
-    key = 's',
+    key = 'x',
     mods = 'ALT',
     action = act.PaneSelect {
       mode = 'SwapWithActive',
